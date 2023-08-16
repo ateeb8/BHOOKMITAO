@@ -1,0 +1,50 @@
+{% load static %}
+
+<meta charset="UTF-8">
+<meta name="viewport" content=“width=device-width, initial-scale=1.0”> <!-- responsiveness -->
+<meta http-equiv=“X-UA-Compatible" content="ie=edge">
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- custom CSS -->
+<link rel="stylesheet" href="{% static 'css/finalstyles.css' %}">
+
+
+<link rel="icon" href="{% static 'images/food.png' %}"> <!--icon-->
+
+<title>Bhook Mitao</title>
+
+<!-- Start Navigation Bar -->
+<nav class="navbar navbar-expand-sm navbar-light">
+    <div class="container"> <!-- margin for left & right -->
+      <a href="#" class="navbar-brand">
+         <img src="{% static 'images/food.png' %}" width="40" height="40">
+          <span style = "color:deepskyblue">Bhook</span>
+          <span style = "color:dodgerblue">Mitao</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myMenu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse text-center" id="myMenu">
+    <ul class="navbar-nav custom-nav ml-auto"> <!-- adjusting the nav-links at left -->
+       {% if request.path == '/' %}
+      <li class="nav-item"><a href="#home" class="nav-link" >Home</a></li>
+      <li class="nav-item"><a href="#about" class="nav-link" >About Us</a></li>
+      <li class="nav-item"><a href="#donate" class="nav-link" >Donate</a></li>
+      <li class="nav-item"><a href="#contact" class="nav-link" >Contact Us</a></li>
+        <li class="nav-item"><a href="{% url 'all_logins' %}" class="nav-link" >Login</a></li>
+
+
+      {% else %}
+           <li class="nav-item"><a href="{% url 'index' %}" class="nav-link">Go Back To HomePage</a></li>
+       {% endif %}
+    </ul>
+  </div>
+  </div>
+</nav> <! --End of Navigation bar-->

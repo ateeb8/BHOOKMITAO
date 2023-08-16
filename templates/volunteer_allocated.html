@@ -1,0 +1,39 @@
+{% extends 'admin_base.html' %}
+{% block main %}
+<div class="card shadow">
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom: 2px solid orange">Allocated Volunteer For The Donation</h5>
+    <div class="container-fluid">
+        <table id="example" class="table table-bordered">
+            <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Donation Name</th>
+
+                <th>Donation Date</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in donation %} <!-- using loop for creating data-->
+            <tr>
+                <td>{{ forloop.counter }}</td> <!--for s.no -->
+                <td>{{ i.donationname }}</td>
+
+                <td>{{ i.donationdate }}</td>
+                <td><a href="{% url 'allocatedvolunteer_view_detail' i.id %}" class="text-primary">View Details</a>
+                    </td>
+
+
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+    </div>
+
+</div>
+{% endblock %}
+

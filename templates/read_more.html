@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+<head>
+
+</head>
+<body id=rm style="background-image : url({% static 'images/poorkid.jpg' %})">
+{% include 'navigation.html' %}
+<hr class="mt-0">
+
+<div class="container-fluid" id="readmore">
+
+            <p class="text-center pt-3 mb-0" style="color:red ; font-size : 40px ; font-weight: bold">Sustainable Management System</p>
+    <h3 class="text-justify px-5 pt-5" style = "color : white">This website is used to manage wastage foods in a useful way. Every day the people are wasting lots of foods. So we have to reduce that food wastage problem through online. If anyone have leftover foods they are entering their food quantity details and their address and then the admin maintain the details of food donator. The donator can create the account and whenever they are having leftover food they can login and give request to the admin. After the admin view the donator request and give the alert message like time to come and collect the food. And the admin collect foods from donator through their nearby volunteer then provide to nearest orphanages or poor people. This project is food redistribution is an enormously successful social innovation that tackles food waste and food poverty. The user's details are maintained confidential because it maintains a separate account for each user.</h3>
+
+
+
+    </div> <!-- End row -->
+
+
+<div class=" text-center px-5">
+
+    <a href="{% url 'donor_login' %}" class="btn btn-primary" > Donate Now <i class="fas fa-angle-double-right"></i></a>
+</div>
+
+
+
+</body>
+</html>

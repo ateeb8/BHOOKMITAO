@@ -1,0 +1,58 @@
+{% load static %}
+
+<head>
+
+</head>
+
+<body id=login style="background-image : url({% static 'images/programmer.jpg' %})">
+      {% include 'navigation.html' %}
+<hr class="mt-0">
+<div class="row">
+    <div class="col-lg-5 m-auto"> <!-- for centre the card -->
+        <div class="card mt-5 bg-dark">
+          <div class="card-title text-center mt-3">
+            <img src="{% static 'images/loginavatar.png' %}" width="150" height="150">
+              <h2 class="text-white">Admin Login</h2>
+        </div>
+        <div class="card body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-user fa-2x"></i>
+                        </span>
+                    </div>
+                    <input type="text" name="username" class="form-control py-4" placeholder="UserName">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-lock fa-2x"></i>
+                        </span>
+                    </div>
+                    <input type="password" name="pwd" class="form-control py-4" placeholder="Password">
+                </div>
+                <div class="col-md-12 text-center">
+                    <input type="submit" value="login" class="btn btn-success px-4 mx-4">
+                </div>
+
+            </form>
+            </div>
+    </div>
+    </div>
+</div>
+</body>
+
+ {% if error == "no" %}
+ <script>
+     alert('Logged In Successfully');
+     window.location = ('{% url 'admin_home' %}');
+ </script>
+ {% endif %}
+ {% if error == "yes" %}
+ <script>
+     alert('Invalid Login Credentials , Try Again...');
+ </script>
+ {% endif %}

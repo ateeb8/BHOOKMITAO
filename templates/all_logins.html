@@ -1,0 +1,64 @@
+{% load static %}
+<html>
+<head>
+
+</head>
+<body id=login2 style="background-image : url({% static 'images/donationfood.jpg' %})">
+{% include 'navigation.html' %}
+<hr class="mt-0">
+
+
+<div class="container mt-5">
+    <h2 class="text-center">Login As a..</h2>
+    <div class="row mt-5">
+       <div class="col-lg-4">
+           <div class="card" style="width:250px">
+              <img src="{% static 'images/admin.png' %}" class="card-img-top" style="width:100%;height:200px">
+               <div class="card-body" >
+                   <h4  class="text-center">Donor</h4>
+                   <!--<p class="text-center">Some Example Text.</p>-->
+                   <a href="{% url 'donor_login' %}" class="btn btn-primary" style="margin-left: 23px">Go To Donor Login</a>
+
+               </div>
+
+           </div>
+
+       </div>
+
+        <div class="col-lg-4">
+           <div class="card" style="width:250px">
+              <img src="{% static 'images/admin.png' %}" class="card-img-top" style="width:100%;height:200px">
+               <div class="card-body">
+                   <h4 class="text-center">Volunteer</h4>
+                   <!--<p class="text-center">Some Example Text</p>-->
+                   <a href="{% url 'volunteer_login' %}" class="btn btn-primary" style="margin-left: 11px">Go To Volunteer Login</a>
+
+               </div>
+
+           </div>
+
+       </div>
+
+        <div class="col-lg-4">
+           <div class="card" style="width:250px">
+              <img src="{% static 'images/admin.png' %}" class="card-img-top" style="width:100%;height:200px">
+               <div class="card-body">
+                   <h4 class="text-center">Admin</h4>
+                   <!--<p class="text-center">Some Example Text</p>-->
+                   <a href="{% url 'admin_login' %}" class="btn btn-primary" style="margin-left: 23px">Go To Admin Login</a>
+
+               </div>
+
+           </div>
+
+       </div>
+
+    </div>
+
+
+</div>
+
+
+
+</body>
+</html>

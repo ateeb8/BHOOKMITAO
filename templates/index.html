@@ -1,0 +1,113 @@
+{% load static %}
+
+<html>
+<head>
+
+
+</head>
+<body>
+
+{% include 'navigation.html' %}
+
+
+<div class="container-fluid" style="border-top: 7px solid royalblue" id="home">
+    <div class="row mb-5"> <!-- Start Row -->
+        <div class="col-lg-6 "> <!-- Start !st column -->
+            <p class="text-center pt-3 mb-0 mt-2" style="color:red ; font-size : 20px">Reduce Wastage of Food Items</p>
+            <h3 class="px-5 pt-5" style = "color: darkolivegreen">
+                Be The Reason Someone Smiles Today!</h3>
+            <h3 class="px-5 pt-3" style = "color : dodgerblue">A man asked the Prophet (SAWW), “What sort of deeds or(what qualities of) Islam are good?” “To feed ( the poor ) and greet those whom you know and those whom you not know.”</h3>
+<div class="px-5">
+    <a href="{% url 'read_more' %}" class="btn btn-success" >Read More <i class="fas fa-angle-double-right"></i></a>
+    <a href="{% url 'donor_login' %}" class="btn btn-primary">Donate Now <i class="fas fa-angle-double-right"></i></a>
+</div>
+        </div> <!-- End 1st column -->
+
+        <div class="col-lg-6 pl-5 mt-4"> <!--Start 2nd column -->
+            <img class="img-thumbnail" width="560" height="315" src="{% static 'images/donation.jpeg' %}"> <!-- img thumbnail for outlining -->
+            </div> <!-- End 2nd column -->
+    </div> <!-- End row -->
+
+    <div class="container-fluid" id="about">
+    <div class="row"> <!-- Start Row -->
+        <div class="col-lg-6  mb-4 pl-5"> <!--Start 1st column -->
+            <img class="img-thumbnail" width="560" height="315" src="{% static 'images/children.jpeg' %}">
+            </div> <!-- End 1st column -->
+        <div class="col-lg-6 "> <!-- Start 2nd column -->
+            <h2 class="text-center pt-3 mb-0 text-secondary" style="font-size : 30px">About Us</h2>
+            <p class="px-5 pt-5" style="font-size : 20px">Bhook Mitao is a platform for the sustainable management of food and food donations. Around 1.3 billion tonnes of food are wasted every year. Furthermore, 20% of the population is experiencing severe food shortages.</p>
+<div class="px-5">
+    <a href="{% url 'read_more' %}" class="btn btn-success">Read More <i class="fas fa-angle-double-right"></i></a>
+
+</div>
+        </div>
+        </div> <!-- End 2nd column -->
+    </div> <!-- End Row -->
+</div>
+
+
+<div class="row" id="donate">    <!-- Start row -->
+    <div class="col-lg-6" style="margin:auto">  <!-- Start 1st column -->
+
+        <h3 class="text-center pt-5" style = "color: rebeccapurple">
+            Best Way To Help Others</h3>
+        <p class="text-center" style="color:red ; font-size : 20px">Join Us and become part of this good work</p>
+
+        <center><a href="{% url 'donor_login' %}" class="btn btn-primary">Donate Now<i class="fas fa-angle-double-right"></i></a>
+        </center>
+    </div> <!-- End 1st column -->
+
+    <div class="col-lg-6" style="margin:auto">  <!-- Start 1st column -->
+
+        <h3 class="text-center pt-5" style = "color: rebeccapurple">
+            Become A Volunteer Today</h3>
+        <p class="text-center" style="color:red ; font-size : 20px">One of the greatest gifts you can give is your time</p>
+
+        <center><a href="{% url 'volunteer_login' %}" class="btn btn-primary">Become Volunteer<i class="fas fa-angle-double-right"></i></a>
+        </center>
+    </div> <!-- End 1st column -->
+</div>  <!-- End row -->
+
+<!-- Start Contact us -->
+ <div class="container-fluid text-center" id="contact">
+     <h1 class="text-center font-weight-bold mt-5" style="font-family : Monotype Corsiva;color : darkred">Contact Us</h1>
+
+     <div class="row mt-5">
+       <div class="col-lg-3">
+           <h4><i class="fas fa-phone-square"></i>Contact</h4>
+           <p class = "mt-3 text-danger font-weight-bold"><a href="tel:+92 3337373087">+92 3337373087</a><br><a href="tel:+92 3318469217">+92 3318469217</a></p>
+       </div>
+          <div class="col-lg-3">
+           <h4><i class="fas fa-envelope"></i>Send Mail</h4>
+              <p class = "mt-3 text-danger font-weight-bold"><a href="mailto:cs1912237@szabist.pk ">cs1912237@szabist.pk</a><br><a href="mailto:cs1912234@szabist.pk">cs1912234@szabist.pk</a></p>
+          </div>
+         <div class="col-lg-3">
+           <h4><i class="fas fa-address-card"></i>Office Address</h4>
+           <p class = "mt-3 text-danger font-weight-bold"><a href="https://goo.gl/maps/wPz3c4wvKYaUfQUB9">Ocean Tower</a></p>
+         </div>
+         <div class="col-lg-3">
+           <h4><i class="far fa-clock"></i>Office Hours</h4>
+           <p class = "mt-3 text-danger font-weight-bold">9:00 Am to 5:00 PM</p>
+         </div>
+     </div>
+ </div>
+     <!-- End Contact us Container -->   <!-- End Contact us -->
+
+
+<!-- Start Footer-->
+<footer class="container-fluid text-white mt-5 " id="footer" style="border-top: 3px solid #DC3545; background-color : black">
+    <div class="container">  <!-- Start footer container -->
+        <div class="row py-3">  <!-- Start footer row -->
+            <div class="col-md-12 text-right">  <!-- Start footer 1st column -->
+
+                <small>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All Rights Reserved | This website is made with <i class="fas fa-heart text-warning"></i> by Sameer Sajid & Ateeb Arshad </small>
+            </div>
+            </div>
+
+
+    </div>
+</footer>
+
+
+</body>
+</html>

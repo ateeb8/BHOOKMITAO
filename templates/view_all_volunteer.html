@@ -1,0 +1,87 @@
+{% extends 'admin_base.html' %}
+
+{% block main %}
+
+
+<div class="card shadow">
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom: 2px solid orange">View Volunteer Detail</h5>
+    <div class="container-fluid">
+        <table class="table table-bordered">
+          <tr align="center">
+              <td colspan="4" style="font-size: 20px ; color: red">Volunteer Details</td>
+          </tr>
+
+            <tr>
+                <th>Volunteer Name</th>
+                <td>{{ volunteer.user.first_name }} {{ volunteer.user.last_name }}</td>
+                <th>Volunteer Contact</th>
+                <td>{{ volunteer.contact }}</td>
+
+            </tr>
+
+            <tr>
+                <th>Email</th>
+                <td>{{ volunteer.user.username }}</td>
+                <th>Registration Date</th>
+                <td>{{ volunteer.regdate }}</td>
+            </tr>
+
+
+
+             <tr>
+                <th>Volunteer Picture</th>
+                <td><img src="{{ volunteer.userpic.url }}" width="50px" height="50px"></td>
+                 <th>Volunteer ID Picture</th>
+                <td><img src="{{ volunteer.idpic.url }}" width="50px" height="50px"></td>
+
+
+
+            </tr>
+
+
+             <tr>
+                <th>Volunteer Address</th>
+                <td colspan="3">{{ volunteer.address }}</td>
+
+            </tr>
+
+             <tr>
+                <th>About Him/Her</th>
+                <td colspan="3">{{ volunteer.aboutme }}</td>
+
+            </tr>
+
+            {% if volunteer.status == "pending" %}
+
+            {% else %}
+                 <tr>
+                <th>Status</th>
+                <td style="text-transform : capitalize">{{ volunteer.status }}</td>
+                <th>Updation Date</th>
+                <td>{{ volunteer.updationdate }}</td>
+
+            </tr>
+
+                  <tr>
+                <th>Admin Remark</th>
+                <td colspan="3">{{ volunteer.adminremark }}</td>
+
+
+            </tr>
+
+            {% endif %}
+
+
+
+        </table>
+
+    </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

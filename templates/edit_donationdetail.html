@@ -1,0 +1,102 @@
+{% extends 'donor_base.html' %}
+
+{% block main %}
+
+    <div class="card shadow">
+      <div class="card-body">
+          <h5 class="p-2" style="border-bottom: 2px solid orange">Edit Donation Detail</h5>
+          <div class="container-fluid">
+              <form method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <div class="form-row">
+                      <div class="col-sm-12">
+                          <div class="form-group">
+                          <label>Donation Name</label>
+                          <input type="text" name="donationname" class="form-control" placeholder="Enter Donation Name" required value="{{ donation.donationname }}">
+                          </div></div>
+
+                      <div class="col-sm-6">
+                          <div class="form-group">
+                          <label>Donation Image </label>
+                              <input type="file" name="donationpic" class="form-control" required>
+
+                          </div></div>
+                      
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                         <img src="{{donation.donationpic.url}}" width="100" height="100">
+
+                          </div></div>
+
+
+                      <div class="col-sm-12">
+                          <div class="form-group">
+                          <label>Quantity<span style="color: red"> (Note : If you select other, please mention quantity of food in description field)</span></label>
+                          <select name="quantity" class="form-control" required >
+                              <option value="1 person">1 person</option>
+                              <option value="2 person">2 person</option>
+                              <option value="3 person">3 person</option>
+                              <option value="4 person">4 person</option>
+                              <option value="5 person">5 person</option>
+                              <option value="6 person">6 person</option>
+                              <option value="7 person">7 person</option>
+                              <option value="8 person">8 person</option>
+                              <option value="9 person">9 person</option>
+                              <option value="10 person">10 person</option>
+                              <option value="Other">Other</option>
+
+                          </select>
+                          </div>
+                      </div>
+
+                      <div class="col-sm-12">
+                          <div class="form-group">
+                          <label>Food was Cooked<span style="color: red"> (Note : If this food was cooked more than 4 days ago, then it will be donated to the Animal Shelter)</span></label>
+                          <select name="quality" class="form-control" required>
+                              <option value="1 day ago">1 day ago</option>
+                              <option value="2 days ago">2 days ago</option>
+                              <option value="3 days ago">3 days ago</option>
+                              <option value="4 days ago">4 days ago</option>
+                              <option value="more than 4 days ago">More than 4 days ago</option>
+
+                          </select>
+                          </div>
+                      </div>
+
+
+                      <div class="col-sm-12">
+                          <div class="form-group">
+                          <label>Donation Collection Address</label>
+                          <textarea name="collectionloc" class="form-control" placeholder="Enter Full Address" required>{{ donation.collectionloc}}</textarea>
+
+                          </div></div>
+
+                      <div class="col-sm-12">
+                          <div class="form-group">
+                          <label>Description (Special Note)</label>
+                          <textarea name="description" class="form-control" placeholder="Special Note for Donation" required>{{ donation.description}}</textarea>
+
+                          </div></div>
+                  </div>
+
+                  <input type="submit" value="Update Details" class="btn btn-primary px-3">
+              </form>
+          </div>
+      </div>
+    </div>
+
+    {% if error == "no" %}
+    <script>
+       alert('Donation Detail has been updated.');
+       window.location=('{% url 'donation_history' %}');
+    </script>
+    {% endif %}
+
+    {% if error == "yes" %}
+    <script>
+       alert('Something went wrong. Please Try Again!');
+
+    </script>
+    {% endif %}
+
+{% endblock %}

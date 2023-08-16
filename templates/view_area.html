@@ -1,0 +1,32 @@
+{% extends 'admin_base.html' %}
+
+{% block main %}
+
+
+<div class="card shadow">
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom: 2px solid orange">View Donation Area Detail</h5>
+    <div class="container-fluid">
+        <table class="table table-bordered">
+          <tr align="center">
+              <td colspan="4" style="font-size: 20px ; color: red">Donation Area Detail</td>
+          </tr>
+
+            <tr>
+                <th>Area Name</th>
+                <td>{{ area.areaname }}</td>
+                 <th>Area Description</th>
+                <td>{{ area.description }}</td>
+            </tr>
+
+
+        </table>
+
+    </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

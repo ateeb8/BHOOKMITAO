@@ -1,0 +1,171 @@
+{% extends 'donor_base.html' %}
+
+{% block main %}
+
+
+<div class="card shadow">
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom: 2px solid orange">View Donation Detail</h5>
+    <div class="container-fluid">
+        <table class="table table-bordered">
+          <tr align="center">
+              <td colspan="4" style="font-size: 20px ; color: red">Donor Details</td>
+          </tr>
+
+            <tr>
+                <th>Donor Name</th>
+                <td>{{ donation.donor.user.first_name }} {{ donation.donor.user.last_name }}</td>
+                <th>Donor Contact</th>
+                <td>{{ donation.donor.contact }}</td>
+
+            </tr>
+
+            <tr>
+                <th>Email</th>
+                <td>{{ donation.donor.user.username }}</td>
+                <th>Donor Picture</th>
+                <td><img src="{{ donation.donor.userpic.url }}" width="50px" height="50px"></td> <!-- .url is used for image-->
+
+            </tr>
+
+            <tr align="center">
+              <td colspan="4" style="font-size: 20px ; color: red">Donation Details</td>
+          </tr>
+
+             <tr>
+                <th>Donation Name</th>
+                <td>{{ donation.donationname }}</td>
+                <th>Donation Picture</th>
+                <td><img src="{{ donation.donationpic.url }}" width="50px" height="50px"></td>
+
+            </tr>
+             <tr>
+                <th>Quantity</th>
+                <td>{{ donation.quantity }}</td>
+                <th>Food was Cooked</th>
+                <td>{{ donation.quality }}</td>
+
+            </tr>
+
+             <tr>
+                <th>Collection Location</th>
+                <td>{{ donation.pinlocation }}</td>
+                 <th>Building Details</th>
+                <td>{{ donation.collectionloc }}</td>
+
+
+            </tr>
+
+             <tr>
+                <th>Food Description</th>
+                <td>{{ donation.description }}</td>
+                 <th>Donation Date</th>
+                <td>{{ donation.donationdate }}</td>
+
+            </tr>
+            {% if donation.status == "accept" %}
+             <tr>
+                <th>Status</th>
+                <td style="text-transform : capitalize">{{ donation.status }}</td>
+                <th>Updation Date</th>
+                <td>{{ donation.updationdate }}</td>
+
+            </tr>
+
+                  <tr>
+                <th>Admin Remark</th>
+                <td colspan="3">{{ donation.adminremark }}</td>
+                  </tr>
+
+               <tr align="center">
+              <td colspan="4" style="font-size: 20px ; color: red">Volunteer Details</td>
+          </tr>
+            <tr>
+                <th>Volunteer</th>
+                <td colspan="3">Volunteer Not Selected Yet</td>
+            </tr>
+
+           {% else %}
+
+
+
+            {% endif %}
+
+            {% if donation.status == "pending" %}
+             <tr>
+                <th>Status</th>
+                <td style="text-transform : capitalize">{{ donation.status }}</td>
+             </tr>
+            {% else %}
+            {% endif %}
+
+            {% if donation.status == "reject" %}
+             <tr>
+                <th>Status</th>
+                <td style="text-transform : capitalize">{{ donation.status }}</td>
+             </tr>
+            <tr>
+                <th>Admin Remark</th>
+                <td colspan="3">{{ donation.adminremark }}</td>
+                  </tr>
+            {% else %}
+            {% endif %}
+
+             {% if donation.donationarea %}
+            <tr>
+                <th>Status</th>
+                <td style="text-transform : capitalize">{{ donation.status }}</td>
+             </tr>
+            <tr>
+                <th>Admin Remark</th>
+                <td colspan="3">{{ donation.adminremark }}</td>
+                  </tr>
+            <tr align="center">
+              <td colspan="4" style="font-size: 20px ; color: red">Volunteer Details</td>
+            </tr>
+              <tr>
+                <th>Volunteer</th>
+                <td colspan="3">{{donation.volunteer.user.username}} [{{donation.volunteer.user.first_name}} {{donation.volunteer.user.last_name}}]</td>
+              <tr>
+
+
+            {% else %}
+            {% endif %}
+
+            {% if donation.status == "Donation Received" %}
+
+              <tr>
+                <th>Volunteer Remarks</th>
+                <td colspan="3">{{donation.volunteerremark}}</td>
+              <tr>
+
+            {% else %}
+
+            {% endif %}
+
+            {% if donation.status == "Donation NotReceived" %}
+
+             <tr>
+                <th>Volunteer Remarks</th>
+                <td colspan="3">{{donation.volunteerremark}}</td>
+              <tr>
+
+            {% else %}
+
+            {% endif %}
+
+
+
+
+
+
+        </table>
+
+    </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

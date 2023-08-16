@@ -1,0 +1,56 @@
+{% load static %}
+
+<head>
+
+</head>
+
+<body id=login style="background-image : url({% static 'images/volunteers-packing-charity-boxes-with-food-clothes.jpg' %})">
+      {% include 'navigation.html' %}
+<hr class="mt-0">
+<div class="row">
+    <div class="col-lg-5 m-auto"> <!-- for centre the card -->
+        <div class="card mt-5 bg-dark">
+          <div class="card-title text-center mt-3">
+            <img src="{% static 'images/loginavatar.png' %}" width="150" height="150">
+              <h2 class="text-white">Volunteer Login</h2>
+        </div>
+        <div class="card body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-user fa-2x"></i>
+                        </span>
+                    </div>
+                    <input type="email" name="emailid" class="form-control py-4" placeholder="Email ID">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-lock fa-2x"></i>
+                        </span>
+                    </div>
+                    <input type="password" name="pwd" class="form-control py-4" placeholder="Password">
+                </div>
+                <input type="submit" value="login" class="btn btn-success px-4 mx-4">
+                <a href="{% url 'volunteer_registration' %}" class="float-right btn btn-warning mx-4">Create Account</a>
+            </form>
+            </div>
+    </div>
+    </div>
+</div>
+</body>
+
+{% if error == "no" %}
+<script>
+    alert('Logged In Successfully');
+    window.location = ('{% url 'volunteer_home' %}');
+</script>
+  {% endif %}
+  {% if error == "not" %}
+<script>
+    alert('Your login status is pending');
+</script>
+  {% endif %}
