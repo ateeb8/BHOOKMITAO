@@ -1,0 +1,23 @@
+#total-donation{
+                 background-color: #4cb4c7;
+               }
+
+#accepted-donation{
+                 background-color: #7abecc;
+               }
+
+#rejected-donation{
+                 background-color: #7CD1C0;
+               }
+
+#pending-donation{
+                 background-color: #4cb4c7;
+               }
+
+#received-donation{
+                 background-color: #7abecc;
+               }
+
+#delivered-donation{
+                 background-color: #7CD1C0;
+               }
